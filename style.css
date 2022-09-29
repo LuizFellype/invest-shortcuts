@@ -1,0 +1,13 @@
+.shortcut-wrapper { 
+  order: -1;
+  margin-right: 5px;
+  background: transparent;
+  border: none;
+  border-right: 2px #404462 dotted;
+  padding-right: 5px;
+}
+
+.shortcut-wrapper > .button:hover {
+  color: white !important;
+  background-color: #000 !important;
+}

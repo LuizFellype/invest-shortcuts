@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Quotex Shortcuts",
+  "version": "0.1",
+  "background.service_worker": {
+    "persistent": false,
+    "scripts": ["content.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://qxbroker.com/pt/trade*"
+      ],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "permissions": [
+    "activeTab"
+  ]
+}
