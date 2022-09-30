@@ -28,7 +28,7 @@ let interval = setInterval(() => {
     try {
       clearInterval(interval)
       const onGoingTime = document.getElementsByClassName('server-time online')[0]
-      onGoingTime.style.fontSize = '20px';
+      onGoingTime && (onGoingTime.style.fontSize = '20px');
 
       const buttonsWrapper = document.createElement("div")
       buttonsWrapper.classList.add(buttonsWrapperClass)
