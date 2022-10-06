@@ -14,7 +14,7 @@
 
 .timeframe-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 5px;
 }
 .timeframe-wrapper > button.trading-chart-settings__item {

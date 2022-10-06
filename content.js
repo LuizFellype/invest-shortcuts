@@ -71,7 +71,7 @@ const createTimeframShortcut = () => {
   const timeframeWrapper = document.createElement("div")
   timeframeWrapper.classList.add(timeframeWrapperClassnames)
 
-  const buttons = [['1m', 4], ['5m', 7], ['15m', 9]]
+  const buttons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9]]
 
   const createButtons = buttonData => {
     const shouldCloseMenu = false
