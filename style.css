@@ -11,3 +11,13 @@
   color: white !important;
   background-color: #000 !important;
 }
+
+.timeframe-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+.timeframe-wrapper > button.trading-chart-settings__item {
+  border: none;
+  margin-bottom: 0px;
+}
