@@ -30,10 +30,10 @@ const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = gr
   return button
 }
 
-const buttonsWrapperClass = "shortcut-wrapper"
+const graphicsButtonsWrapperClassname = "graphics-wrapper"
 const createGraphicsShortcutOnHeader = () => {
   const buttonsWrapper = document.createElement("div")
-  buttonsWrapper.classList.add(buttonsWrapperClass)
+  buttonsWrapper.classList.add(graphicsButtonsWrapperClassname)
 
   // const configWrapper =  document.createElement("div")
   // const allItens = document.querySelectorAll(".sidepanel__menu-item")
@@ -93,36 +93,30 @@ const increaseLiveTiming = () => {
       onGoingTime.style.fontSize = '20px';
     }
   }, 1000)
-
-}
-
-const setTimeFrameShortcutsIntoSettingsWrapper = (timeframeButtonsWrapper) => {
-  let findTrandingSettingsInterval = setInterval(() => {
-    const rightSidebar = document.getElementsByClassName('sidebar-section')[0]
-
-    if (rightSidebar) {
-      clearInterval(findTrandingSettingsInterval)
-      rightSidebar.appendChild(timeframeButtonsWrapper)
-    }
-  }, 1000)
 }
 
 
+const shortcutsWrapperClassName = 'shortcuts-wrapper'
 // main execution
-let findMenuInterval = setInterval(() => {
-  let menu = document.querySelector(".header__container")
+let findChartSettingsInterval = setInterval(() => {
+  let chartSettingsWrapper = document.querySelector(".trading-chart-settings")
 
-  if (menu) {
+  if (chartSettingsWrapper) {
     try {
-      clearInterval(findMenuInterval)
+      clearInterval(findChartSettingsInterval)
 
       increaseLiveTiming()
 
       const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
-      menu.appendChild(graphicButtonsWrapper)
-
       const timeframeButtonsWrapper = createTimeframShortcut()
-      setTimeFrameShortcutsIntoSettingsWrapper(timeframeButtonsWrapper)
+
+      const shortcutsWrapper = document.createElement("div")
+      shortcutsWrapper.classList.add(shortcutsWrapperClassName)
+
+      shortcutsWrapper.appendChild(timeframeButtonsWrapper)
+      shortcutsWrapper.appendChild(graphicButtonsWrapper)
+
+      chartSettingsWrapper.appendChild(shortcutsWrapper)
 
     } catch (error) {
       console.log('QX >>> error', { error })

@@ -1,13 +1,16 @@
-.shortcut-wrapper { 
-  order: -1;
-  margin-right: 5px;
-  background: transparent;
-  border: none;
-  border-right: 2px #404462 dotted;
-  padding-right: 5px;
+.shortcuts-wrapper {
+  position: absolute;
+  bottom: 0px;
+  left: 36px;
 }
 
-.shortcut-wrapper > .button:hover {
+.graphics-wrapper {
+  background: transparent;
+  border: none;
+  display: flex;
+}
+
+.graphics-wrapper>.button:hover {
   color: white !important;
   background-color: #000 !important;
 }
@@ -15,9 +18,10 @@
 .timeframe-wrapper {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
-.timeframe-wrapper > button.trading-chart-settings__item {
+
+.shortcuts-wrapper button.trading-chart-settings__item {
   border: none;
   margin-bottom: 0px;
 }
