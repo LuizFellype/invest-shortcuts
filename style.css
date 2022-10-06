@@ -2,6 +2,11 @@
   position: absolute;
   bottom: 0px;
   left: 36px;
+  pointer-events: none;
+}
+
+.shortcuts-wrapper>div {
+  pointer-events: auto;
 }
 
 
