@@ -4,10 +4,15 @@
   left: 36px;
 }
 
+
 .graphics-wrapper {
   background: transparent;
   border: none;
   display: flex;
+}
+
+.graphics-wrapper>.button {
+  background-color: #ffffff1a !important;
 }
 
 .graphics-wrapper>.button:hover {
@@ -15,13 +20,19 @@
   background-color: #000 !important;
 }
 
+
 .timeframe-wrapper {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.shortcuts-wrapper button.trading-chart-settings__item {
+.timeframe-wrapper button.trading-chart-settings__item {
   border: none;
+  margin-bottom: 0px;
+}
+
+
+.trading-chart-settings>.trading-chart-settings__item:nth-child(5) {
   margin-bottom: 0px;
 }
