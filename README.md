@@ -4,7 +4,10 @@
 - Vai em chrome://extensions
 - Arrasta o zip baixado para la
 
-Após isso, ao entrar no broker da quotex as funcionalidades devem estar sendo aplicadas como mostra na image acima:
+Após isso, ao entrar no broker da quotex as funcionalidades devem estar sendo aplicadas como mostra na image abaixo:
 
 - Tempo atual maior (20px)
-- Botoes de atalho devem estar aparecendo no header
+- Botoes de atalho de desenhos devem estar aparecendo no header
+- Botoes de atalho de timeframes devem aparecer abaixo do botao de vender
+
+![Captura de Tela 2022-10-06 às 15 18 44](https://user-images.githubusercontent.com/35281966/194389756-a0c82d5d-1b5d-4981-b77a-ed94f492853c.png)
