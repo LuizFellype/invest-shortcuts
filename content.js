@@ -1,6 +1,6 @@
-const drawsButtonClassNames = ["button", "button--small", "header__sidebar-button"]
+const graphicsButtonClassNames = ["button", "button--small", "header__sidebar-button"]
 
-const getDrawersList = () => {
+const getGraphicsList = () => {
   const settingsBtn = document.querySelectorAll('.trading-chart-settings__item')[0]
   settingsBtn.click();
   const menuList = document.querySelectorAll('.sidepanel__menu-item')
@@ -8,7 +8,7 @@ const getDrawersList = () => {
   return menuList
 }
 
-const closeMenuList = () => {
+const closeGraphicsList = () => {
   const settingsBtn = document.querySelectorAll('.trading-chart-settings__item')[0]
   settingsBtn.click();
   const menuList = document.querySelectorAll('.sidepanel__menu-item')
@@ -16,7 +16,7 @@ const closeMenuList = () => {
   return menuList
 }
 
-const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = drawsButtonClassNames) => (content = '', positionOnList, onclick = () => { }) => {
+const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = graphicsButtonClassNames) => (content = '', positionOnList, onclick = () => { }) => {
   const button = document.createElement("button")
 
   buttonClassNames.forEach(className => button.classList.add(className))
@@ -24,14 +24,14 @@ const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = dr
   button.onclick = positionOnList !== undefined ? () => {
     const menuList = getMenuList()
     menuList[positionOnList].click();
-    shouldCloseMenu && closeMenuList()
+    shouldCloseMenu && closeGraphicsList()
   } : onclick
 
   return button
 }
 
 const buttonsWrapperClass = "shortcut-wrapper"
-const createDrawsShortcutOnHeader = () => {
+const createGraphicsShortcutOnHeader = () => {
   const buttonsWrapper = document.createElement("div")
   buttonsWrapper.classList.add(buttonsWrapperClass)
 
@@ -47,7 +47,7 @@ const createDrawsShortcutOnHeader = () => {
   // }
 
   const createButtons = buttonData => {
-    const button = createButton(getDrawersList)(...buttonData)
+    const button = createButton(getGraphicsList)(...buttonData)
     buttonsWrapper.appendChild(button)
   }
 
@@ -118,12 +118,12 @@ let findMenuInterval = setInterval(() => {
 
       increaseLiveTiming()
 
-      const drawButtonsWrapper = createDrawsShortcutOnHeader()
-      menu.appendChild(drawButtonsWrapper)
+      const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
+      menu.appendChild(graphicButtonsWrapper)
 
       const timeframeButtonsWrapper = createTimeframShortcut()
       setTimeFrameShortcutsIntoSettingsWrapper(timeframeButtonsWrapper)
-     
+
     } catch (error) {
       console.log('QX >>> error', { error })
     }
