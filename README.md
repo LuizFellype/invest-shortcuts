@@ -1,9 +1,8 @@
 ## Funcionaliades: 
 - Tempo atual maior (20px)
-- Botoes de atalho de desenhos devem estar aparecendo no header
-- Botoes de atalho de timeframes devem aparecer abaixo do botao de vender
+- Botoes de atalhos de desenhos e de timeframes devem aparecer perto do block de configuraçoes no canto inferior esquerdo.
 
-![Captura de Tela 2022-10-06 às 15 18 44](https://user-images.githubusercontent.com/35281966/194389756-a0c82d5d-1b5d-4981-b77a-ed94f492853c.png)
+![Captura de Tela 2022-10-06 às 16 32 35](https://user-images.githubusercontent.com/35281966/194403065-f196103f-6906-4986-aa17-f6833c1d9a7c.png)
 
 
 ## Passos para adicionar
