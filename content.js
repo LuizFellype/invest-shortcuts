@@ -51,7 +51,7 @@ const createGraphicsShortcutOnHeader = () => {
     buttonsWrapper.appendChild(button)
   }
 
-  [['Trend', 9], ['Horizontal', 11], ['Fibo', 19]].forEach(createButtons)
+  [['Fibo', 19], ['Horizontal', 11], ['Trend', 9]].forEach(createButtons)
 
   return buttonsWrapper
 }
