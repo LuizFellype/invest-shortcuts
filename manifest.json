@@ -4,15 +4,24 @@
   "version": "0.3",
   "background.service_worker": {
     "persistent": false,
-    "scripts": ["content.js"]
+    "scripts": [
+      "content.js"
+    ]
   },
   "content_scripts": [
     {
       "matches": [
         "https://qxbroker.com/pt/trade*"
       ],
-      "js": ["content.js"],
-      "css": ["style.css"]
+      "js": [
+        "graphics.js",
+        "timeframe.js",
+        "createButton.js",
+        "content.js"
+      ],
+      "css": [
+        "style.css"
+      ]
     }
   ]
 }
