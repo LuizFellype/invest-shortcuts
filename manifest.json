@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Quotex Shortcuts",
+  "name": "Invest Shortcuts",
   "version": "0.3",
   "background.service_worker": {
     "persistent": false,
@@ -11,7 +11,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://qxbroker.com/pt/trade*"
+        "https://qxbroker.com/pt/trade*",
+        "https://pocketoption.com/en/cabinet/quick-high-low/*"
       ],
       "js": [
         "graphics.js",

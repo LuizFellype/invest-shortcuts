@@ -12,7 +12,24 @@ const getTimeframeList = () => {
     return timeframeButtons
 }
 
-const createTimeframShortcut = () => {
+const getPocketTimeframeList = () => {
+    const currentTimeFrameButton = document.getElementsByClassName('items__link items__link--chart-type')[0]
+
+    if (!currentTimeFrameButton) return []
+
+    currentTimeFrameButton.click()
+
+    const timeframeButtons = document.querySelectorAll('.time-frames-block .list-links a')
+
+    return timeframeButtons
+}
+
+const closePocketMenu = () => {
+    const modal = document.getElementById('modal-root')
+    modal.children[0].style.display = 'none'
+}
+
+const createTimeframShortcut = (isPocket = false) => {
     const timeframeWrapper = document.createElement("div")
     timeframeWrapper.classList.add(timeframeWrapperClassnames)
 
@@ -20,7 +37,11 @@ const createTimeframShortcut = () => {
 
     const createButtons = buttonData => {
         const shouldCloseMenu = false
-        const button = createButton(getTimeframeList, shouldCloseMenu, timeframeButtonClassNames)(...buttonData)
+        const _getTimeframList = isPocket ? getPocketTimeframeList : getTimeframeList
+        const closeMenu = isPocket ? closePocketMenu : shouldCloseMenu
+        const buttonClassName = isPocket ? ['items__link', 'items__link--chart-type', 'pocket-tf-button'] : timeframeButtonClassNames
+
+        const button = createButton(_getTimeframList, closeMenu, buttonClassName)(...buttonData)
         timeframeWrapper.appendChild(button)
     }
 

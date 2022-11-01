@@ -18,12 +18,12 @@ const createShortcutWrapper = () => {
 
 const shortcutsWrapperClassName = 'shortcuts-wrapper'
 // main execution
-let findChartSettingsInterval = setInterval(() => {
-  let chartSettingsWrapper = document.querySelector(".trading-chart-settings")
+let findAnchor = setInterval(() => {
+  let QXChartSettingsWrapper = document.querySelector(".trading-chart-settings")
 
-  if (chartSettingsWrapper) {
+  if (QXChartSettingsWrapper) {
     try {
-      clearInterval(findChartSettingsInterval)
+      clearInterval(findAnchor)
 
       increaseLiveTiming()
 
@@ -36,10 +36,31 @@ let findChartSettingsInterval = setInterval(() => {
       shortcutsWrapper.appendChild(timeframeButtonsWrapper)
       shortcutsWrapper.appendChild(graphicButtonsWrapper)
 
-      chartSettingsWrapper.appendChild(shortcutsWrapper)
+      QXChartSettingsWrapper.appendChild(shortcutsWrapper)
 
     } catch (error) {
       console.log('QX >>> error', { error })
+    }
+  } else {
+    let pocketSettingsWrapper = document.querySelector(".top-left-block__block1")
+
+    if (pocketSettingsWrapper) {
+      try {
+        clearInterval(findAnchor)
+
+        // const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
+        const timeframeButtonsWrapper = createTimeframShortcut(true)
+
+        const shortcutsWrapper = document.createElement("div")
+        shortcutsWrapper.classList.add('pocket-shortcuts-wrapper')
+
+        shortcutsWrapper.appendChild(timeframeButtonsWrapper)
+
+        const wrapper = document.querySelector(".top-left-block")
+        wrapper.insertBefore(shortcutsWrapper, wrapper.children[1]);
+      } catch (error) {
+        console.log('QX >>> error', { error })
+      }
     }
   }
 }, 1000);

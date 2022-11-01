@@ -1,4 +1,4 @@
-const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = graphicsButtonClassNames) => (content = '', positionOnList, onclick = () => { }) => {
+const createButton = (getMenuList, closeMenu, buttonClassNames = graphicsButtonClassNames) => (content = '', positionOnList, onclick = () => { }) => {
     const button = document.createElement("button")
 
     buttonClassNames.forEach(className => button.classList.add(className))
@@ -6,7 +6,7 @@ const createButton = (getMenuList, shouldCloseMenu = true, buttonClassNames = gr
     button.onclick = positionOnList !== undefined ? () => {
         const menuList = getMenuList()
         menuList[positionOnList]?.click();
-        shouldCloseMenu && closeGraphicsList()
+        closeMenu && closeMenu()
     } : onclick
 
     return button
