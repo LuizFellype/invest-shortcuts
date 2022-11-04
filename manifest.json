@@ -18,6 +18,7 @@
         "graphics.js",
         "timeframe.js",
         "createButton.js",
+        "expiration.js",
         "content.js"
       ],
       "css": [

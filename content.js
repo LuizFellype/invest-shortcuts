@@ -9,6 +9,10 @@ const increaseLiveTiming = () => {
   }, 1000)
 }
 
+const increaseCurrentTimeframeFont = () => {
+  document.getElementsByClassName('items__timeframe')[0].style.fontSize = '13px'
+}
+
 const createShortcutWrapper = () => {
   const shortcutsWrapper = document.createElement("div")
   shortcutsWrapper.classList.add(shortcutsWrapperClassName)
@@ -51,6 +55,8 @@ let findAnchor = setInterval(() => {
         // const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
         const timeframeButtonsWrapper = createTimeframShortcut(true)
 
+        increaseCurrentTimeframeFont()
+
         const shortcutsWrapper = document.createElement("div")
         shortcutsWrapper.classList.add('pocket-shortcuts-wrapper')
 
@@ -58,6 +64,8 @@ let findAnchor = setInterval(() => {
 
         const wrapper = document.querySelector(".top-left-block")
         wrapper.insertBefore(shortcutsWrapper, wrapper.children[1]);
+
+        addExpirationButtons()
       } catch (error) {
         console.log('QX >>> error', { error })
       }

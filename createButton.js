@@ -1,5 +1,5 @@
-const createButton = (getMenuList, closeMenu, buttonClassNames = graphicsButtonClassNames) => (content = '', positionOnList, onclick = () => { }) => {
-    const button = document.createElement("button")
+const createButton = (getMenuList, closeMenu, buttonClassNames = [], element = 'button') => (content = '', positionOnList, onclick = () => { }) => {
+    const button = document.createElement(element)
 
     buttonClassNames.forEach(className => button.classList.add(className))
     button.innerHTML = content;

@@ -25,7 +25,7 @@ const createGraphicsShortcutOnHeader = () => {
     buttonsWrapper.classList.add(graphicsButtonsWrapperClassname)
 
     const createButtons = buttonData => {
-        const button = createButton(getGraphicsList, closeGraphicsList)(...buttonData)
+        const button = createButton(getGraphicsList, closeGraphicsList, graphicsButtonClassNames)(...buttonData)
         buttonsWrapper.appendChild(button)
     }
 
