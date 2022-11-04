@@ -29,18 +29,30 @@ const closePocketMenu = () => {
     modal.children[0].style.display = 'none'
 }
 
+const getTFDataBasedOnBroker = (isPocket = false) => {
+    const QXShouldCloseMenu = false
+
+    const QXButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9]]
+    const pocketButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['10m', 10], ['15m', 9], ['1H', 11]]
+
+    return {
+        _getTimeframList: isPocket ? getPocketTimeframeList : getTimeframeList,
+        closeMenu: isPocket ? closePocketMenu : QXShouldCloseMenu,
+        buttonClassName: isPocket ? ['items__link', 'items__link--chart-type', 'pocket-tf-button'] : timeframeButtonClassNames,
+        buttons: isPocket ? pocketButtons : QXButtons,
+    }
+}
+
 const createTimeframShortcut = (isPocket = false) => {
     const timeframeWrapper = document.createElement("div")
     timeframeWrapper.classList.add(timeframeWrapperClassnames)
 
-    const buttons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9]]
+    const { _getTimeframList,
+        closeMenu,
+        buttonClassName,
+        buttons } = getTFDataBasedOnBroker(isPocket)
 
     const createButtons = buttonData => {
-        const shouldCloseMenu = false
-        const _getTimeframList = isPocket ? getPocketTimeframeList : getTimeframeList
-        const closeMenu = isPocket ? closePocketMenu : shouldCloseMenu
-        const buttonClassName = isPocket ? ['items__link', 'items__link--chart-type', 'pocket-tf-button'] : timeframeButtonClassNames
-
         const button = createButton(_getTimeframList, closeMenu, buttonClassName)(...buttonData)
         timeframeWrapper.appendChild(button)
     }
