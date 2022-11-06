@@ -54,7 +54,7 @@ let findAnchor = setInterval(() => {
 
         // const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
         const timeframeButtonsWrapper = createTimeframShortcut(true)
-
+        
         increaseCurrentTimeframeFont()
 
         const shortcutsWrapper = document.createElement("div")
@@ -67,7 +67,7 @@ let findAnchor = setInterval(() => {
 
         addExpirationButtons()
       } catch (error) {
-        console.log('QX >>> error', { error })
+        console.log('Pocket >>> error', { error })
       }
     }
   }

@@ -12,7 +12,7 @@
     {
       "matches": [
         "https://qxbroker.com/pt/trade*",
-        "https://pocketoption.com/en/cabinet/quick-high-low/*"
+        "https://pocketoption.com/en/cabinet/*"
       ],
       "js": [
         "graphics.js",
