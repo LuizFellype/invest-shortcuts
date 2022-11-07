@@ -5,13 +5,12 @@ Quotex:
 
 Pocket:
 - Font aumentada do timeframe selecionado.
-- Atalhos de timeframes.
-- Atalho para aumentar tempo de expiraçao.
+- Atalhos de desenhos (linhas horizontal e trend) e timeframes.
+- Atalhos para aumentar tempo de expiraçao.
 
 | Quotex  | Pocket  |
 |---|---|
-| ![Captura de Tela 2022-10-06 às 16 32 35](https://user-images.githubusercontent.com/35281966/194403065-f196103f-6906-4986-aa17-f6833c1d9a7c.png)  | <img width="1096" alt="Captura de Tela 2022-11-04 às 15 58 09" src="https://user-images.githubusercontent.com/35281966/200320211-5983f9c8-191c-4d87-b163-600470b0c25b.png">
-  |
+| ![Captura de Tela 2022-10-06 às 16 32 35](https://user-images.githubusercontent.com/35281966/194403065-f196103f-6906-4986-aa17-f6833c1d9a7c.png)  | <img width="838" alt="Captura de Tela 2022-11-07 às 18 26 13" src="https://user-images.githubusercontent.com/35281966/200420044-e62239a6-94dd-4a0e-880d-b0f26e1b1f6c.png">
 
 
 ## Passos para adicionar
