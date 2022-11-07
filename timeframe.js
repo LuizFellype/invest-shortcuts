@@ -33,7 +33,7 @@ const getTFDataBasedOnBroker = (isPocket = false) => {
     const QXShouldCloseMenu = false
 
     const QXButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9]]
-    const pocketButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['10m', 10], ['15m', 9], ['1H', 11]]
+    const pocketButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['10m', 8], ['15m', 9], ['1H', 11]]
 
     return {
         _getTimeframList: isPocket ? getPocketTimeframeList : getTimeframeList,
