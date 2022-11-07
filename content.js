@@ -31,7 +31,7 @@ let findAnchor = setInterval(() => {
 
       increaseLiveTiming()
 
-      const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
+      const graphicButtonsWrapper = createGraphicsShortcuts()
       const timeframeButtonsWrapper = createTimeframShortcut()
 
       const shortcutsWrapper = document.createElement("div")
@@ -52,9 +52,9 @@ let findAnchor = setInterval(() => {
       try {
         clearInterval(findAnchor)
 
-        // const graphicButtonsWrapper = createGraphicsShortcutOnHeader()
+        const graphicButtonsWrapper = createGraphicsShortcuts(true)
         const timeframeButtonsWrapper = createTimeframShortcut(true)
-        
+
         increaseCurrentTimeframeFont()
 
         const shortcutsWrapper = document.createElement("div")
@@ -64,6 +64,10 @@ let findAnchor = setInterval(() => {
 
         const wrapper = document.querySelector(".top-left-block")
         wrapper.insertBefore(shortcutsWrapper, wrapper.children[1]);
+
+        const indicatorsWrapper = document.querySelector(".top-left-block__block1")
+
+        indicatorsWrapper.appendChild(graphicButtonsWrapper)
 
         addExpirationButtons()
       } catch (error) {
