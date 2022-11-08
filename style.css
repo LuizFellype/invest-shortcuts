@@ -10,6 +10,9 @@
   pointer-events: auto;
 }
 
+.pocket-shortcuts-wrapper .timeframe-wrapper {
+  width: 80%;
+}
 
 .graphics-wrapper {
   background: transparent;

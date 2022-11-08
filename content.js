@@ -20,17 +20,20 @@ const createShortcutWrapper = () => {
   return shortcutsWrapper
 }
 
+const reloadShortcuts = (injectShortcuts) => {
+  const leftSidebarSettings = document.querySelector(".sidebar__settings-block")
+  const _createButton = createButton(undefined, undefined, ['sidebar__settings-button'])
+
+  leftSidebarSettings.appendChild(_createButton('*', undefined, injectShortcuts))
+}
+
 const shortcutsWrapperClassName = 'shortcuts-wrapper'
 // main execution
 let findAnchor = setInterval(() => {
-  let QXChartSettingsWrapper = document.querySelector(".trading-chart-settings")
+  const QXChartSettingsWrapper = document.querySelector(".trading-chart-settings")
 
   if (QXChartSettingsWrapper) {
-    try {
-      clearInterval(findAnchor)
-
-      increaseLiveTiming()
-
+    const injectShortcuts = () => {
       const graphicButtonsWrapper = createGraphicsShortcuts()
       const timeframeButtonsWrapper = createTimeframShortcut()
 
@@ -40,7 +43,18 @@ let findAnchor = setInterval(() => {
       shortcutsWrapper.appendChild(timeframeButtonsWrapper)
       shortcutsWrapper.appendChild(graphicButtonsWrapper)
 
-      QXChartSettingsWrapper.appendChild(shortcutsWrapper)
+      const chartSettingsWrapper = document.querySelector(".trading-chart-settings")
+      chartSettingsWrapper?.appendChild(shortcutsWrapper)
+    }
+
+    try {
+      clearInterval(findAnchor)
+
+      increaseLiveTiming()
+
+      injectShortcuts()
+
+      reloadShortcuts(injectShortcuts)
 
     } catch (error) {
       console.log('QX >>> error', { error })
