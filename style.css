@@ -46,3 +46,12 @@
 .trading-chart-settings>.trading-chart-settings__item:nth-child(5) {
   margin-bottom: 0px;
 }
+
+.short-expiration-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.short-expiration-wrapper button.trading-chart-settings__item {
+  border: none;
+}

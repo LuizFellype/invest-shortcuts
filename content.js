@@ -54,6 +54,8 @@ let findAnchor = setInterval(() => {
 
       injectShortcuts()
 
+      shortExpirationButtons()
+
       reloadShortcuts(injectShortcuts)
 
     } catch (error) {
