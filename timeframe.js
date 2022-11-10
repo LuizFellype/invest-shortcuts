@@ -32,13 +32,15 @@ const closePocketMenu = () => {
 const getTFDataBasedOnBroker = (isPocket = false) => {
     const QXShouldCloseMenu = false
 
-    const QXButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9]]
+    const QXButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['15m', 9], ['1H', 11]]
     const pocketButtons = [['1m', 4], ['3m', 6], ['5m', 7], ['10m', 8], ['15m', 9], ['1H', 11]]
+
+    const pocketButtonClassnames = ['items__link', 'items__link--chart-type', 'pocket-tf-button']
 
     return {
         _getTimeframList: isPocket ? getPocketTimeframeList : getTimeframeList,
         closeMenu: isPocket ? closePocketMenu : QXShouldCloseMenu,
-        buttonClassName: isPocket ? ['items__link', 'items__link--chart-type', 'pocket-tf-button'] : timeframeButtonClassNames,
+        buttonClassName: isPocket ? pocketButtonClassnames : timeframeButtonClassNames,
         buttons: isPocket ? pocketButtons : QXButtons,
     }
 }

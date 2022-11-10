@@ -55,3 +55,7 @@
 .short-expiration-wrapper button.trading-chart-settings__item {
   border: none;
 }
+
+.left-spacing {
+  margin-left: 7px;
+}

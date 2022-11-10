@@ -24,7 +24,7 @@ const reloadShortcuts = (injectShortcuts) => {
   const leftSidebarSettings = document.querySelector(".sidebar__settings-block")
   const _createButton = createButton(undefined, undefined, ['sidebar__settings-button'])
 
-  leftSidebarSettings.appendChild(_createButton('*', undefined, injectShortcuts))
+  leftSidebarSettings.appendChild(_createButton('*', undefined, undefined, injectShortcuts))
 }
 
 const shortcutsWrapperClassName = 'shortcuts-wrapper'
