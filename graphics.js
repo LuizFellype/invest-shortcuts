@@ -1,14 +1,17 @@
 const graphicsButtonClassNames = ["button", "button--small", "header__sidebar-button"]
 
-const getGraphicsList = () => {
+const getGraphicsList = (cb = () => {}) => {
     const settingsBtn = document.querySelectorAll('.trading-chart-settings__item')[0]
 
     if (!settingsBtn) return []
 
     settingsBtn.click();
-    const menuList = document.querySelectorAll('.sidepanel__menu-item')
 
-    return menuList
+    setTimeout(() => {
+        const menuList = document.querySelectorAll('.sidepanel__menu-item')
+    
+        cb(menuList)
+    })
 }
 
 const getPocketGraphicsList = () => {
@@ -31,9 +34,7 @@ const closeGraphicsList = () => {
 }
 
 const getGraphicsDataBasedOnBroker = (isPocket = false) => {
-    const QXShouldCloseMenu = false
-
-    const QXButtons = [['Fibo', 19], ['Horizontal', 11], ['Trend', 9]]
+    const QXButtons = [['Fibo', 'Retração de Fibonacci'], ['Horizontal', 'Linha horizontal'], ['Trend', 'Linha Estendida']]
     const pocketButtons = [['--', 0], ['/', 2]]
 
     return {

@@ -1,15 +1,19 @@
 const timeframeWrapperClassnames = 'timeframe-wrapper'
 const timeframeButtonClassNames = ['trading-chart-settings__item']
 
-const getTimeframeList = () => {
+const getTimeframeList = (cb = () => {}) => {
     const currentTimeFrameButton = document.getElementsByClassName('trading-chart-settings__item')[1]
 
     if (!currentTimeFrameButton) return []
-
     currentTimeFrameButton.click()
-    const timeframeButtons = document.getElementsByClassName('popover-select__settings-time-item')
 
-    return timeframeButtons
+    setTimeout(() => {
+        const timeframeButtons = document.getElementsByClassName('popover-select__settings-time-item')
+
+        cb(timeframeButtons)
+    })
+    
+    
 }
 
 const getPocketTimeframeList = () => {
@@ -37,11 +41,20 @@ const getTFDataBasedOnBroker = (isPocket = false) => {
 
     const pocketButtonClassnames = ['items__link', 'items__link--chart-type', 'pocket-tf-button']
 
+    if (isPocket) {
+        return {
+            _getTimeframList: getPocketTimeframeList,
+            closeMenu: closePocketMenu,
+            buttonClassName: pocketButtonClassnames,
+            buttons: pocketButtons,
+        }
+    }
+
     return {
-        _getTimeframList: isPocket ? getPocketTimeframeList : getTimeframeList,
-        closeMenu: isPocket ? closePocketMenu : QXShouldCloseMenu,
-        buttonClassName: isPocket ? pocketButtonClassnames : timeframeButtonClassNames,
-        buttons: isPocket ? pocketButtons : QXButtons,
+        _getTimeframList: getTimeframeList,
+        closeMenu: QXShouldCloseMenu,
+        buttonClassName: timeframeButtonClassNames,
+        buttons: QXButtons,
     }
 }
 

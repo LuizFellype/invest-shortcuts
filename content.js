@@ -10,7 +10,7 @@ const increaseLiveTiming = () => {
 }
 
 const increaseCurrentTimeframeFont = () => {
-  document.getElementsByClassName('items__timeframe')[0].style.fontSize = '13px'
+  // document.querySelector('.counter>.counter__number')?.style.fontSize = '13px'
 }
 
 const createShortcutWrapper = () => {
