@@ -24,7 +24,7 @@ const disableExpirationTimeInput = (err) => {
     if (expTimeInput?.disabled) expTimeInput.disabled = false
 }
 
-const getShortExpirationList = () => {
+const getShortExpirationList = (cb = () => {}) => {
     const timeInput = document.querySelector(".input-control--time > input.input-control__input")
     const changeExpirationTypeButton = document.querySelector(".input-control--time > .input-control__label__switch")
 
@@ -32,9 +32,12 @@ const getShortExpirationList = () => {
 
     isShortTimeSelected ? timeInput.click() : changeExpirationTypeButton.click()
 
-    const list = document.querySelectorAll(".input-control__dropdown > .input-control__dropdown-option")
+    
+    setTimeout(() => {
+        const list = document.querySelectorAll(".input-control__dropdown > .input-control__dropdown-option")
 
-    return list
+        cb(list)   
+    })
 }
 
 const shortExpirationButtons = () => {

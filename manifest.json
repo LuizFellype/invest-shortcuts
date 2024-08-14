@@ -11,8 +11,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://qxbroker.com/pt/*",
-        "https://pocketoption.com/en/cabinet/*"
+        "https://qxbroker.com/pt/trade"
       ],
       "js": [
         "graphics.js",
